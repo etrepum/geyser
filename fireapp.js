@@ -5,6 +5,8 @@ var myDataStore = new Firebase('https://missionfire.firebaseio.com/');
 
 var sessionScore = new Firebase('https://missionfire.firebaseio.com/score');
 
+var oldVal;
+
 var renderScore = function (score) {
 	console.log(score);
 	$('.score-value').remove();
@@ -12,14 +14,13 @@ var renderScore = function (score) {
 }
 
 sessionScore.on('value', function(snapshot) {
-  // console.log(snapshot.val());
-  var oldVal = snapshot.val();
-  $('#score-button').click(function(e) {
-  	var newVal = oldVal + 5;
-  	console.log(newVal);
-		myDataStore.update({score: newVal});
-	})
+  oldVal = snapshot.val();
 	renderScore(oldVal);
 });
+
+$('#score-button').click(function(e) {
+	var newVal = oldVal + 5;
+	myDataStore.update({score: newVal});
+})
 
 
