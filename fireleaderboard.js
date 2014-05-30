@@ -3,7 +3,7 @@
 var LEADERBOARD_SIZE = 5;
 
 // Create our Firebase reference
-var scoreListRef = new Firebase('https://missionfire.firebaseio.com/');
+var scoreListRef = new Firebase('https://missionfire.firebaseio.com/leaderboard');
 
 // Keep a mapping of firebase locations to HTML elements, so we can move / remove elements as necessary.
 var htmlForPath = {};
@@ -59,11 +59,12 @@ $("#scoreInput").keypress(function (e) {
     if (e.keyCode === 13) {
         var newScore = Number($("#scoreInput").val());
         var name = $("#nameInput").val();
-        $("#scoreInput").val("");
 
         if (name.length === 0) {
             return;
         }
+
+        $("#scoreInput,#nameInput").val("");
 
         var userScoreRef = scoreListRef.child(name);
 
