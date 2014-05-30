@@ -3,7 +3,7 @@
 
 var myDataStore = new Firebase('https://missionfire.firebaseio.com/');
 
-var sessionScore = new Firebase('https://missionfire.firebaseio.com/turn');
+var sessionTurn = new Firebase('https://missionfire.firebaseio.com/turn');
 
 var turn = 0;
 
@@ -21,23 +21,31 @@ var renderTurn = function (turn) {
 	// $('.score-total').append($('<span class="score-value">' + score + '</span>'));
 }
 
-sessionScore.on('value', function(snapshot) {
+sessionTurn.on('value', function(snapshot) {
   turn = snapshot.val();
 	renderTurn(turn);
 });
 
 $('.not-played').click(function(e) {
 	e.preventDefault();
-	alert($(this).attr('id'));
-	// var value = $(this).val();
-	// console.log(value);
+	var elId = $(this).attr('id');
+	console.log(elId);
 	var newTurn = turn + 1;
 	myDataStore.update({turn: newTurn});
-	// $(this).remove();
-	console.log('square touched');
+	$(this).remove();
+	console.log(newTurn);
+	if (newTurn > 0) {
+		if (newTurn % 2 == 0) {
+			$('#' + elId + '-div').append($('<span class="turn-value even"> O </span>'))
+		} else {
+			console.log('i am odd');
+			$('#' + elId + '-div').append($('<span class="turn-value odd"> X </span>'))
+		}
+	}	
 })
 
 $('.new-game').click(function(e) {
+	e.preventDefault();
 	myDataStore.update({turn: 0});
 	console.log('new game set');
 })
