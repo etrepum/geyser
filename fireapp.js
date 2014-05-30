@@ -3,24 +3,20 @@
 
 //THE FIREBASE WAY
 
-var myDataStore = new Firebase('https://missionfire.firebaseio.com/');
-
 var sessionScore = new Firebase('https://missionfire.firebaseio.com/score');
 
 var oldVal;
 
 var renderScore = function (score) {
 	console.log(score);
-	$('.score-value').remove();
-	$('.score-total').append($('<span class="score-value">' + score + '</span>'));
+	$('.score-value').text(score);
 };
 
 sessionScore.on('value', function(snapshot) {
-  oldVal = snapshot.val();
+    oldVal = snapshot.val();
 	renderScore(oldVal);
 });
 
-$('#score-button').click(function(e) {
-	var newVal = oldVal + 5;
-	myDataStore.update({score: newVal});
+$('#score-button').on('click', function(e) {
+	sessionScore.set(oldVal + 5);
 });
