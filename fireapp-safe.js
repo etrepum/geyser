@@ -1,9 +1,9 @@
 /*jslint sloppy:true white:true devel:true vars:true*/
 /*global $, Firebase*/
 
-//THE FIREBASE WAY
+//THE FIREBASE WAY, but make sure not to lose any updates!
 
-var sessionScore = new Firebase('https://missionfire.firebaseio.com/score');
+var sessionScore = new Firebase('https://missionfire.firebaseio.com/score-safe');
 
 var oldVal = 0;
 
@@ -19,5 +19,7 @@ sessionScore.on('value', function(snapshot) {
 });
 
 $('#score-button').on('click', function(e) {
-    sessionScore.set(oldVal + 5);
+    sessionScore.transaction(function (val) {
+        return Number(val) + 5;
+    });
 });
