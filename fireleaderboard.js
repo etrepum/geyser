@@ -37,7 +37,7 @@ function handleScoreRemoved(scoreSnapshot) {
 function changedCallback(scoreSnapshot, prevScoreName) {
     handleScoreRemoved(scoreSnapshot);
     handleScoreAdded(scoreSnapshot, prevScoreName);
-};
+}
 
 // Create a view to only receive callbacks for the last LEADERBOARD_SIZE scores
 var scoreListView = scoreListRef.limit(LEADERBOARD_SIZE);
