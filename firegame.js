@@ -22,10 +22,10 @@ var renderTurn = function (turn) {
 var renderElem = function (elem) {
     console.log(elem);
     console.log(turn);
-    $('#' + elem).remove();
-    var newElId = ('#' + elem + '-div');
-    console.log(newElId);
     if (turn > 0) {
+        $('#' + elem).remove();
+        var newElId = ('#' + elem + '-div');
+        console.log(newElId);
         if (turn % 2 === 0) {
             $(newElId).append($('<span class="turn-value even"> O </span>'));
         } else {
@@ -48,7 +48,7 @@ sessionTurn.on('value', function(snapshot) {
     // renderTurn(turn);
 });
 
-$('.not-played').click(function(e) {
+$('.not-played').on('click', function(e) {
     e.preventDefault();
     var elId = $(this).attr('id');
     console.log(elId);
@@ -72,7 +72,7 @@ $('.not-played').click(function(e) {
     // }    
 });
 
-$('.new-game').click(function(e) {
+$('.new-game').on('click', function(e) {
     e.preventDefault();
     myDataStore.update({turn: 0});
     myDataStore.update({elem: null});

@@ -53,7 +53,7 @@ scoreListView.on('child_moved', changedCallback);
 scoreListView.on('child_changed', changedCallback);
 
 // When the user presses enter on scoreInput, add the score, and update the highest score.
-$("#scoreInput").keypress(function (e) {
+$("#scoreInput").on('keypress', function (e) {
     if (e.keyCode === 13) {
         var newScore = Number($("#scoreInput").val());
         var name = $("#nameInput").val();
