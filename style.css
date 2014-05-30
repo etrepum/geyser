@@ -9,9 +9,17 @@
 
 .game-square {
 	background-color: silver;
-	height: 8em;
-	text-align: center;
-	vertical-align: middle;
+	height: 2.75em;
+    font-size: 3em;
+    /* CSS flexible boxes make centering much easier! */
+    /* https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .middle-row, 
@@ -20,8 +28,7 @@
 }
 
 .not-played {
-	padding-top: 3em;
-	font-size: 3em;
+    cursor: pointer;
 }
 
 .new-game {
