@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		
+  </head>
+  <body>
+
+  	<div class="container">
+      <div class="row">
+
+        <div class="col-sm-6 col-sm-offset-3 game-board">
+        	<div class="row">
+
+                <div class="new-game col-sm-4 col-sm-offset-4">
+                    <button> new game </button>
+                </div>
+
+        		<div class="game-row top-row col-sm-12">
+        			<div class="row">
+        				<div id="top-left" class="col-sm-3 game-square left" value="top-left">
+                            <span id="top-left" class="not-played"> ? </span>
+        				</div>
+        				<div id="top-middle" class="col-sm-3 col-sm-offset-1 game-square middle" value="top-middle">
+        					<span class="not-played"> ? </span>
+        				</div>
+        				<div id="top-right" class="col-sm-3 col-sm-offset-1 game-square right" value="top-right">
+        					<span class="not-played"> ? </span>
+        				</div>
+        			</div>
+        		</div>
+
+        		<div class="game-row middle-row col-sm-12">
+        			<div class="row">
+        				<div id="middle-left" class="col-sm-3 game-square left" value="middle-left">
+        					<span class="not-played"> ? </span>
+        				</div>
+        				<div id="middle-middle" class="col-sm-3 col-sm-offset-1 game-square middle" value="middle-middle">
+        					<span class="not-played"> ? </span>
+        				</div>
+        				<div id="middle-right" class="col-sm-3 col-sm-offset-1 game-square right" value="middle-right">
+        					<span class="not-played"> ? </span>
+        				</div>
+        			</div>
+        		</div>
+
+                <div class="game-row bottom-row col-sm-12">
+                    <div class="row">
+                        <div id="bottom-left" class="col-sm-3 game-square left" value="bottom-left">
+                            <span class="not-played"> ? </span>
+                        </div>
+                        <div id="bottom-middle" class="col-sm-3 col-sm-offset-1 game-square middle" value="bottom-middle">
+                            <span class="not-played"> ? </span>
+                        </div>
+                        <div id="bottom-right" class="col-sm-3 col-sm-offset-1 game-square right" value="bottom-right">
+                            <span class="not-played"> ? </span>
+                        </div>
+                    </div>
+                </div>
+
+        	</div>
+        </div>
+
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="app.js"></script> -->
+    <script src="firegame.js"></script>
+  </body>
+
+</html>
