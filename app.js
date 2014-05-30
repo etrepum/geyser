@@ -4,8 +4,8 @@
 var oldVal = 0;
 
 var renderScore = function (score) {
-	console.log(score);
-	$('.score-value').text(score);
+    console.log(score);
+    $('.score-value').text(score);
 };
 
 var updateScore = function (newVal) {
@@ -14,7 +14,7 @@ var updateScore = function (newVal) {
 };
 
 $('#score-button').on('click', function(e) {
-	updateScore(oldVal + 5);
+    updateScore(oldVal + 5);
 });
 
 $(window).on('load', function (e) {
