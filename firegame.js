@@ -23,7 +23,7 @@ var renderElem = function (elem) {
     console.log(elem);
     console.log(turn);
     $('#' + elem).remove();
-  var newElId = ('#' + elem + '-div');
+    var newElId = ('#' + elem + '-div');
     console.log(newElId);
     if (turn > 0) {
         if (turn % 2 === 0) {
@@ -36,15 +36,15 @@ var renderElem = function (elem) {
 
 
 sessionElem.on('value', function(snapshot) {
-  var addElem = snapshot.val();
-  console.log(addElem);
+    var addElem = snapshot.val();
+    console.log(addElem);
     renderElem(addElem);
 });
 
 
 
 sessionTurn.on('value', function(snapshot) {
-  turn = snapshot.val();
+    turn = snapshot.val();
     // renderTurn(turn);
 });
 
