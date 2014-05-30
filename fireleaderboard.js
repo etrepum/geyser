@@ -33,24 +33,22 @@ function handleScoreRemoved(scoreSnapshot) {
     delete htmlForPath[scoreSnapshot.name()];
 }
 
+// Helper function to handle when a score changes or moves positions.
+function changedCallback(scoreSnapshot, prevScoreName) {
+    handleScoreRemoved(scoreSnapshot);
+    handleScoreAdded(scoreSnapshot, prevScoreName);
+};
+
 // Create a view to only receive callbacks for the last LEADERBOARD_SIZE scores
 var scoreListView = scoreListRef.limit(LEADERBOARD_SIZE);
 
 // Add a callback to handle when a new score is added.
-scoreListView.on('child_added', function (newScoreSnapshot, prevScoreName) {
-    handleScoreAdded(newScoreSnapshot, prevScoreName);
-});
+scoreListView.on('child_added', handleScoreAdded);
 
 // Add a callback to handle when a score is removed
-scoreListView.on('child_removed', function (oldScoreSnapshot) {
-    handleScoreRemoved(oldScoreSnapshot);
-});
+scoreListView.on('child_removed', handleScoreRemoved);
 
-// Add a callback to handle when a score changes or moves positions.
-var changedCallback = function (scoreSnapshot, prevScoreName) {
-    handleScoreRemoved(scoreSnapshot);
-    handleScoreAdded(scoreSnapshot, prevScoreName);
-};
+// Add a callback to handle when a score is moved or changed
 scoreListView.on('child_moved', changedCallback);
 scoreListView.on('child_changed', changedCallback);
 
@@ -64,6 +62,7 @@ $("#scoreInput").keypress(function (e) {
             return;
         }
 
+        // Clear the inputs
         $("#scoreInput,#nameInput").val("");
 
         var userScoreRef = scoreListRef.child(name);
