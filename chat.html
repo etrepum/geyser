@@ -2,14 +2,33 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <script src="https://cdn.firebase.com/js/client/1.0.15/firebase.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
         <link rel="stylesheet" href="chat.css">
     </head>
     <body>
-        <div id="chat-screen"></div>
-        <input type="text" id="name-input" placeholder="Name">
-        <input type="text" id="text-input" placeholder="Text">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 chat-title">
+                    <p> Chatter Box </p>
+                </div>
+                <div class="col-sm-12 chat-containter">
+                    <div class="row">
+                        <div class="col-sm-12 chat-inputs">
+                            <input type="text" id="name-input" placeholder="Name">
+                            <input type="text" id="text-input" placeholder="Text">
+                        </div>
+                        <div id="chat-screen" class="col-sm-12 msgs"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <script src="firechat.js"></script>
     </body>
 </html>

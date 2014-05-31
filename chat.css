@@ -1,5 +1,23 @@
 .name {
-    margin-right: 1em;
+/*    margin-right: 1em;*/
     font-weight: bold;
     font-style: italic;
+}
+
+.chat-inputs {
+	margin-top: 1em;
+}
+
+.msgs {
+	margin-top: 2em;
+}
+
+.msgRow {
+	margin-bottom: 0.25em;
+}
+
+.chat-title {
+	margin-top: 1em;
+	font-size: 2em;
+	font-style: italic; 
 }

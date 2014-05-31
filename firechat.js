@@ -11,7 +11,7 @@ var htmlForPath = {};
 // Helper function that takes a new chat snapshot and adds an appropriate row to our screen.
 function handleChatAdded(chatSnapshot, prevChatName) {
     var newChatRow = $("<div/>").addClass('msgRow');
-    newChatRow.append($('<span/>').text(chatSnapshot.val().name).addClass('name'));
+    newChatRow.append($('<span/>').text(chatSnapshot.val().name).addClass('name  col-sm-2'));
     newChatRow.append($('<span/>').text(chatSnapshot.val().text).addClass('message'));
 
     // Store a reference to the table row so we can get it again later.
@@ -22,7 +22,7 @@ function handleChatAdded(chatSnapshot, prevChatName) {
         $("#chat-screen").append(newChatRow);
     } else {
         var lowerChatRow = htmlForPath[prevChatName];
-        lowerChatRow.after(newChatRow);
+        lowerChatRow.before(newChatRow);
     }
 }
 
