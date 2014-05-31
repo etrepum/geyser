@@ -1,7 +1,6 @@
 
 .score-total {
     margin-top: 2em;
-    text-align: center;
 }
 
 .sale-image {
@@ -23,14 +22,26 @@
     font-size: 2em;
 }
 
-.add-score {
-    margin-top: 1em;
-    text-align: center;
+.estimate {
+    margin-top: 4em;
 }
 
+.price {
+    font-style: italic;
+}
+
+.add-score {
+    margin-top: 4em;
+}
 
 .score-value {
 	font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+.score-button {
+
 }
 
 .game-board {

@@ -20,6 +20,6 @@ sessionScore.on('value', function(snapshot) {
 
 $('#score-button').on('click', function(e) {
     sessionScore.transaction(function (val) {
-        return Number(val) + 5;
+        return Number(val) + 500;
     });
 });
