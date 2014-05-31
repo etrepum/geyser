@@ -2,19 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
     <script src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
   </head>
   <body>
     <div class="container">
       <div class="row">
 
-        <div class="col-sm-8 col-sm-offset-2 score-total">
+        <div class="col-sm-6 col-sm-offset-3 app-title-div">
+          <span class="app-title"> Tulip </span> 
+          <p class="desc"> Flash auctions </div>
+        </div>
+
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="row">
+            <div class="col-sm-6 sale-image pull-left">
+              <img src="http://3.bp.blogspot.com/-laa1apMcUEM/T4LuNS6Z1FI/AAAAAAAAd18/-Uts8GOPleg/s1600/Andy+Warhol1+-+copia+(3).jpg" style="height:255px;width:255px;border-radius:5px;"/>
+            </div>
+            <div class="col-sm-6 score-total pull-right">
+              <span class="score-title"> The score is </span> 
+              <span class="score-value" value=""> </span>
+            </div>
+          </div>
+        </div>
+
+<!--         <div class="col-sm-4 col-sm-offset-4 sale-image">
+          <img src="http://3.bp.blogspot.com/-laa1apMcUEM/T4LuNS6Z1FI/AAAAAAAAd18/-Uts8GOPleg/s1600/Andy+Warhol1+-+copia+(3).jpg" style="height:255px;width:255px;border-radius:5px;"/>
+        </div> -->
+
+<!--         <div class="col-sm-4 col-sm-offset-4 score-total">
           <span class="score-title"> The score is </span> 
           <span class="score-value" value=""> </span>
-        </div>
-        <div id="scoring-div" class="col-sm-8 col-sm-offset-2">
+        </div> -->
+        <div id="scoring-div" class="col-sm-4 col-sm-offset-4 add-score">
           <button id="score-button"> Add 5 </button>
         </div>
       </div>

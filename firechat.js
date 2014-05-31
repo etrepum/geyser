@@ -10,14 +10,14 @@ var htmlForPath = {};
 
 // Helper function that takes a new chat snapshot and adds an appropriate row to our screen.
 function handleChatAdded(chatSnapshot, prevChatName) {
-    var newChatRow = $("<div/>");
+    var newChatRow = $("<div/>").addClass('msgRow');
     newChatRow.append($('<span/>').text(chatSnapshot.val().name).addClass('name'));
-    newChatRow.append($('<span/>').text(chatSnapshot.val().text));
+    newChatRow.append($('<span/>').text(chatSnapshot.val().text).addClass('message'));
 
     // Store a reference to the table row so we can get it again later.
     htmlForPath[chatSnapshot.name()] = newChatRow;
 
-    // Insert the new score in the appropriate place in the table.
+    // Insert the new message in the appropriate place in the table.
     if (prevChatName === null) {
         $("#chat-screen").append(newChatRow);
     } else {
@@ -26,33 +26,33 @@ function handleChatAdded(chatSnapshot, prevChatName) {
     }
 }
 
-// Helper function to handle a score object being removed; just removes the corresponding table row.
+// Helper function to handle a mesaage object being removed; just removes the corresponding table row.
 function handleChatRemoved(chatSnapshot) {
     var removedChatRow = htmlForPath[chatSnapshot.name()];
     removedChatRow.remove();
     delete htmlForPath[chatSnapshot.name()];
 }
 
-// Helper function to handle when a score changes or moves positions.
+// Helper function to handle when a Mesasage changes or moves positions.
 function changedCallback(chatSnapshot, prevChatName) {
     handleChatRemoved(chatSnapshot);
     handleChatAdded(chatSnapshot, prevChatName);
 }
 
-// Create a view to only receive callbacks for the last LEADERBOARD_SIZE scores
+// Create a view to only receive callbacks for the last CHAT_SIZE scores
 var recentChatView = chatRef.limit(CHAT_SIZE);
 
-// Add a callback to handle when a new score is added.
+// Add a callback to handle when a new message is added.
 recentChatView.on('child_added', handleChatAdded);
 
-// Add a callback to handle when a score is removed
+// Add a callback to handle when a message is removed
 recentChatView.on('child_removed', handleChatRemoved);
 
-// Add a callback to handle when a score is moved or changed
+// Add a callback to handle when a mesaage is moved or changed
 recentChatView.on('child_moved', changedCallback);
 recentChatView.on('child_changed', changedCallback);
 
-// When the user presses enter on scoreInput, add the score, and update the highest score.
+// When the user hits enter on textInput, add the message, and update the highest score.
 $("#text-input").on('keypress', function (e) {
     if (e.keyCode === 13) {
         var text = $('#text-input').val();

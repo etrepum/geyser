@@ -1,4 +1,34 @@
 
+.score-total {
+    margin-top: 2em;
+    text-align: center;
+}
+
+.sale-image {
+    margin-top: 1em; 
+    text-align: center;
+}
+
+.app-title-div {
+    margin-top: 0.25em; 
+    text-align: center;
+}
+
+.app-title {
+    font-size: 4em;
+}
+
+.desc {
+    font-style: italic;
+    font-size: 2em;
+}
+
+.add-score {
+    margin-top: 1em;
+    text-align: center;
+}
+
+
 .score-value {
 	font-weight: bold;
 }
