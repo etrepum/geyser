@@ -14,7 +14,7 @@ var updateScore = function (newVal) {
 };
 
 $('#score-button').on('click', function(e) {
-    updateScore(oldVal + 5);
+    updateScore(oldVal + 500);
 });
 
 $(window).on('load', function (e) {

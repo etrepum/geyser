@@ -14,19 +14,39 @@
     <div class="container">
       <div class="row">
 
-        <div class="col-sm-8 col-sm-offset-2 score-total">
-          <span class="score-title"> The score is </span> 
-          <span class="score-value" value=""> </span>
+        <div class="col-sm-6 col-sm-offset-3 app-title-div">
+          <span class="app-title"> Tulip </span> 
+          <p class="desc"> Flash auctions </div>
         </div>
-        <div id="scoring-div" class="col-sm-8 col-sm-offset-2">
-          <button id="score-button"> Add 5 </button>
+
+        <div class="col-sm-6 col-sm-offset-3">
+          <div class="row">
+
+            <div class="col-sm-6 sale-image pull-left">
+              <img src="http://3.bp.blogspot.com/-laa1apMcUEM/T4LuNS6Z1FI/AAAAAAAAd18/-Uts8GOPleg/s1600/Andy+Warhol1+-+copia+(3).jpg" style="height:255px;width:255px;border-radius:5px;"/>
+            </div>
+
+            <div class="col-sm-6 estimate">
+              <span class="score-title"> Estimated Value: <span class="price"> 1,350,000</span> </span> 
+            </div>
+
+            <div class="col-sm-6 score-total">
+              <span class="score-title"> Current Bid:</span> 
+              <span class="score-value" value=""></span>
+            </div>
+
+            <div id="scoring-div" class="col-sm-6 add-score">
+              <button id="score-button" class="btn btn-default btn-lg"> Bid 500 </button>
+            </div>
+
+          </div>
         </div>
+
       </div>
     </div>
 
     <link rel="stylesheet" href="style.css">
     <script src="app.js"></script>
-    <!-- <script src="fireapp.js"></script> -->
   </body>
 
 </html>
